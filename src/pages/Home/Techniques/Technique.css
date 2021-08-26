@@ -1,0 +1,11 @@
+.slideContent{
+  transition: transform 0.5s ease-in-out;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) translateX(calc(100% * var(--offset))) rotateY(calc(-45deg * var(--dir)));
+}
+
+
+.slideContent:hover {
+  transition: none;
+  transform: perspective(1000px) rotateY(calc(var(--x) * 45deg)) rotateX(calc(var(--y) * -45deg));
+}
