@@ -65,59 +65,55 @@ const EveryNiche = () => {
 
     return (
         <Box>
-            <Box style={{ backgroundColor: "pink" }}>
-                <PaddedBox>
-                    <Box style={{ backgroundColor: "green" }}>
-                        <MyContainer>
-                            <Box style={{ backgroundColor: "blue" }}>
-                                <TitleSubtitle title="A product for every niche" subtitle="Doesn’t matter what nich you’re after – Webify has it all." />
-                                <Grid container spacing={4} alignItems="center">
-                                    <Grid item xs={12} md={7}>
-                                        <Box >
-                                            <ButtonImage2 handleOpen={handleOpen} />
-                                            <TransitionsModal handleOpen={handleOpen} handleClose={handleClose} open={open} />
-                                        </Box>
-                                    </Grid>
-                                    <Grid item xs={12} md={5}>
-                                        <Box mb={4}>
-                                            <IconButton
-                                                className={classes.button1}
-                                                aria-label="localmall icon"
-                                                aria-controls="localmall icon"
-                                                aria-haspopup="true"
-                                            >
-                                                <LocalMallIcon className={classes.icon1} />
-                                            </IconButton>
-                                            <Typography className={classes.descriptionHead} variant="subtitle1" >
-                                                Super Creative
-                                            </Typography>
-                                            <Typography className={classes.descriptionBody} variant="subtitle2">
-                                                Our award-winning templates are the most beautiful way to present your ideas online. Stand out with a professional website, portfolio, or online store.
-                                            </Typography>
-                                        </Box>
-                                        <Box>
-                                            <IconButton
-                                                className={classes.button2}
-                                                aria-label="localmall icon"
-                                                aria-controls="localmall icon"
-                                                aria-haspopup="true"
-                                            >
-                                                <LayersIcon className={classes.icon2} />
-                                            </IconButton>
-                                            <Typography className={classes.descriptionHead} variant="subtitle1" >
-                                                Design-driven
-                                            </Typography>
-                                            <Typography className={classes.descriptionBody} variant="subtitle2">
-                                                Trusted by the world’s best, Squarespace empowers people with creative ideas to succeed. Every block is designed and coded with huge attention to details.
-                                            </Typography>
-                                        </Box>
-                                    </Grid>
-                                </Grid>
-                            </Box>
-                        </MyContainer>
+            <PaddedBox>
+                <MyContainer>
+                    <Box >
+                        <TitleSubtitle title="A product for every niche" subtitle="Doesn’t matter what nich you’re after – Webify has it all." />
+                        <Grid container spacing={4} alignItems="center">
+                            <Grid item xs={12} md={7}>
+                                <Box >
+                                    <ButtonImage2 handleOpen={handleOpen} />
+                                    <TransitionsModal handleOpen={handleOpen} handleClose={handleClose} open={open} />
+                                </Box>
+                            </Grid>
+                            <Grid item xs={12} md={5}>
+                                <Box mb={4}>
+                                    <IconButton
+                                        className={classes.button1}
+                                        aria-label="localmall icon"
+                                        aria-controls="localmall icon"
+                                        aria-haspopup="true"
+                                    >
+                                        <LocalMallIcon className={classes.icon1} />
+                                    </IconButton>
+                                    <Typography className={classes.descriptionHead} variant="subtitle1" >
+                                        Super Creative
+                                    </Typography>
+                                    <Typography className={classes.descriptionBody} variant="subtitle2">
+                                        Our award-winning templates are the most beautiful way to present your ideas online. Stand out with a professional website, portfolio, or online store.
+                                    </Typography>
+                                </Box>
+                                <Box>
+                                    <IconButton
+                                        className={classes.button2}
+                                        aria-label="localmall icon"
+                                        aria-controls="localmall icon"
+                                        aria-haspopup="true"
+                                    >
+                                        <LayersIcon className={classes.icon2} />
+                                    </IconButton>
+                                    <Typography className={classes.descriptionHead} variant="subtitle1" >
+                                        Design-driven
+                                    </Typography>
+                                    <Typography className={classes.descriptionBody} variant="subtitle2">
+                                        Trusted by the world’s best, Squarespace empowers people with creative ideas to succeed. Every block is designed and coded with huge attention to details.
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                        </Grid>
                     </Box>
-                </PaddedBox>
-            </Box>
+                </MyContainer>
+            </PaddedBox>
             <Divider />
         </Box >
     )

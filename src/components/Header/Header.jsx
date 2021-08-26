@@ -14,6 +14,7 @@ import MenuIcon from "@material-ui/icons/Menu"
 import { useNavigate } from 'react-router-dom'
 import menuItems from './menuItems'
 import logo from '../../images/logo.png'
+import { CheckBox } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -31,13 +32,9 @@ const useStyles = makeStyles((theme) => ({
     toolbar: {
         padding: 0,
     },
-    menuButton: {
-        margin: 0,
-        padding: 0,
-    },
     menuIcon: {
         fontSize: '2rem',
-        padding: theme.spacing(1)
+        cursor: "pointer"
     },
     menuItems: {
         display: "flex",
@@ -87,18 +84,12 @@ export default function MenuAppBar() {
                         <img className={classes.logo} src={logo} alt="company logo" />
                     </Box>
                     {isMedium ?
-                        <Box>
-                            <IconButton
-                                edge="start"
-                                className={classes.menuButton}
-                                color="inherit"
-                                aria-label="menu"
-                                aria-controls="menu-appbar"
-                                aria-haspopup="true"
+                        <Box >
+                            <Box
                                 onClick={handleMenu}
                             >
                                 <MenuIcon className={classes.menuIcon} />
-                            </IconButton>
+                            </Box>
                             < Menu
                                 id="menu-appbar"
                                 anchorEl={anchorEl}

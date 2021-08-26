@@ -5,21 +5,22 @@ import {
     Typography,
     Box,
     Grid,
-    Button,
     Paper,
     IconButton,
     Divider
 } from '@material-ui/core';
 import { MyContainer, PaddedBox, TitleSubtitle } from '../../../ContainerAndBox'
-import DevicesIcon from '@material-ui/icons/Devices';
-import cx from "classnames"
+
 
 
 const useStyles = makeStyles((theme) => ({
     box: {
         backgroundImage: "url(https://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/icon-box-bg.png)",
         backgroundPosition: "center 30px",
-        backgroundRepeat: "no-repeat"
+        backgroundRepeat: "no-repeat",
+        [theme.breakpoints.down("md")]: {
+            backgroundPosition: "center center",
+        }
     },
     paper: {
         padding: theme.spacing(5, 4),

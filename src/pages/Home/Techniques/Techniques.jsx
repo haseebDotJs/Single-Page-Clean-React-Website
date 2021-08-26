@@ -8,7 +8,8 @@ import {
     Button,
     Paper,
     IconButton,
-    Divider
+    Divider,
+    useMediaQuery
 } from '@material-ui/core';
 import { MyContainer, PaddedBox } from '../../../ContainerAndBox'
 import cx from "classnames"
@@ -18,13 +19,8 @@ import TimerIcon from '@material-ui/icons/Timer';
 import LocalPizzaIcon from '@material-ui/icons/LocalPizza';
 
 const useStyles = makeStyles((theme) => ({
-    // leftContainer: {
-    //     marginLeft: "auto",
-    //     marginRight: "auto"
-    // },
     paper: {
         height: "160px",
-        margin: 0,
         paddingTop: theme.spacing(4),
         paddingBottom: theme.spacing(6),
         paddingLeft: theme.spacing(4),
@@ -48,6 +44,9 @@ const useStyles = makeStyles((theme) => ({
             "& $learnMore": {
                 display: "block"
             }
+        },
+        [theme.breakpoints.down("md")]: {
+            marginBottom: theme.spacing(3)     
         }
     },
     firstPaper: {
@@ -58,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
     },
     lastPaper: {
         marginTop: theme.spacing(-3),
+        marginBottom: 0,
         [theme.breakpoints.down("sm")]: {
             marginTop: theme.spacing(0)
         }
@@ -77,7 +77,6 @@ const useStyles = makeStyles((theme) => ({
     },
     subtitle2: {
         fontSize: '.8rem',
-        fontWeight: theme.typography.fontWeightRegular,
         marginBottom: theme.spacing(2),
         color: "gray",
 
@@ -162,6 +161,9 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: theme.spacing(3),
         fontWeight: theme.typography.fontWeightRegular,
     },
+    left: {
+        marginRight: 0
+    },
     button: {
         borderRadius: '50px',
         padding: '.75em 2em',
@@ -182,131 +184,128 @@ const useStyles = makeStyles((theme) => ({
 const Techniques = () => {
     const classes = useStyles()
 
-
+    const isMedium = useMediaQuery('(max-width:768px)')
+    console.log("isMedium", isMedium);
     return (
         <Box>
-            <Box style={{backgroundColor: "pink"}}>
-                <PaddedBox>
-                    <Box style={{ backgroundColor: 'green' }}>
-                        <MyContainer >
-                            <Grid container  justify="center" >
-                                <Grid item container xs={12} lg={6} spacing={3} style={{ backgroundColor: 'blue' }}>
-                                    <Grid item xs={12} md={6} >
-                                        <Paper variant="outlined" className={cx(classes.paper, classes.firstPaper, classes.creativePaper)}>
-                                            <IconButton
-                                                className={cx(classes.menuButton, classes.creativeButton)}
-                                                aria-label="weekend icon"
-                                                aria-controls="weekend icon"
-                                                aria-haspopup="true"
-                                            >
-                                                <WeekendIcon className={cx(classes.icon, classes.creativeIcon)} />
-                                            </IconButton>
-                                            <Typography className={cx(classes.subtitle1, classes.subtitles)} variant="subtitle1" >
-                                                Super Creative
-                                            </Typography>
-                                            <Typography className={cx(classes.subtitle2, classes.subtitles)} variant="subtitle2">
-                                                Digital transformation describes an organisation making a fundamental change from its current state
-                                            </Typography>
-                                            <Box className={classes.learnMoreContainer}>
-                                                <Typography className={classes.learnMore} variant="body2" >
-                                                    Learn More
-                                                </Typography>
-                                            </Box>
-                                        </Paper>
-                                    </Grid>
-
-                                    <Grid item xs={12} md={6}>
-                                        <Paper variant="outlined" className={cx(classes.paper, classes.featurePaper)}>
-                                            <IconButton
-                                                className={cx(classes.menuButton, classes.featureButton)}
-                                                aria-label="watch icon"
-                                                aria-controls="watch icon"
-                                                aria-haspopup="true"
-                                            >
-                                                <WatchIcon className={cx(classes.icon, classes.featureIcon,)} />
-                                            </IconButton>
-                                            <Typography className={cx(classes.subtitle1, classes.subtitles)} variant="subtitle1" >
-                                                Feature-driven
-                                            </Typography>
-                                            <Typography className={cx(classes.subtitle2, classes.subtitles)} variant="subtitle2" color="textPrimary">
-                                                It’s also a cultural change, a shift in mindset where the whole company supports a new way of thinking.                                    </Typography>
-                                            <Box className={classes.learnMoreContainer}>
-                                                <Typography className={classes.learnMore} variant="body2" color="textPrimary">
-                                                    Learn More
-                                                </Typography>
-                                            </Box>
-                                        </Paper>
-                                    </Grid>
-                                    <Grid item xs={12} md={6}>
-                                        <Paper variant="outlined" className={cx(classes.paper, classes.avantPaper)}>
-                                            <IconButton
-                                                className={cx(classes.menuButton, classes.avantButton)}
-                                                aria-label="timer icon"
-                                                aria-controls="timer icon"
-                                                aria-haspopup="true"
-                                            >
-                                                <TimerIcon className={cx(classes.icon, classes.avantIcon)} />
-                                            </IconButton>
-                                            <Typography className={cx(classes.subtitle1, classes.subtitles)} variant="subtitle1" >
-                                                Avant Garde
-                                            </Typography>
-                                            <Typography className={cx(classes.subtitle2, classes.subtitles)} variant="subtitle2" color="textPrimary">
-                                                We can change the way your business thinks and behaves long-term in order to combat the threat of digital disruption.
-                                            </Typography>
-                                            <Box className={classes.learnMoreContainer}>
-                                                <Typography className={classes.learnMore} variant="body2" color="textPrimary">
-                                                    Learn More
-                                                </Typography>
-                                            </Box>
-                                        </Paper>
-                                    </Grid>
-
-                                    <Grid item xs={12} md={6}>
-                                        <Paper variant="outlined" className={cx(classes.paper, classes.foxPaper, classes.lastPaper)}>
-                                            <IconButton
-                                                className={cx(classes.menuButton, classes.foxButton)}
-                                                aria-label="localpizza icon"
-                                                aria-controls="localpizza icon"
-                                                aria-haspopup="true"
-                                            >
-                                                <LocalPizzaIcon className={cx(classes.icon, classes.foxIcon)} />
-                                            </IconButton>
-                                            <Typography className={cx(classes.subtitle1, classes.subtitles)} variant="subtitle1" >
-                                                Fox in the Box
-                                            </Typography>
-                                            <Typography className={cx(classes.subtitle2, classes.subtitles)} variant="subtitle2" color="textPrimary">
-                                                We will work with you as the business transforms into one that is efficient, customer-centric.                                    </Typography>
-                                            <Box className={classes.learnMoreContainer}>
-                                                <Typography className={classes.learnMore} variant="body2" color="textPrimary">
-                                                    Learn More
-                                                </Typography>
-                                            </Box>
-                                        </Paper>
-                                    </Grid>
-                                </Grid>
-                                <Grid className={classes.contentContainer} item xs={12} md={6}>
-                                    <Box >
-                                        <Typography className={classes.contentTitle} variant="h4">
-                                            Build websites with webify.
-                                            <br />
-                                            Any niche. In minutes.
+            <PaddedBox>
+                <MyContainer >
+                    <Grid container justify="center" spacing={5} >
+                        <Grid item container xs={12} lg={6} justify="center" spacing={isMedium ? 0 : 3} >
+                            <Grid item xs={12} md={6} className={classes.left}>
+                                <Paper variant="outlined" className={cx(classes.paper, classes.firstPaper, classes.creativePaper)}>
+                                    <IconButton
+                                        className={cx(classes.menuButton, classes.creativeButton)}
+                                        aria-label="weekend icon"
+                                        aria-controls="weekend icon"
+                                        aria-haspopup="true"
+                                    >
+                                        <WeekendIcon className={cx(classes.icon, classes.creativeIcon)} />
+                                    </IconButton>
+                                    <Typography className={cx(classes.subtitle1, classes.subtitles)} variant="subtitle1" >
+                                        Super Creative
+                                    </Typography>
+                                    <Typography className={cx(classes.subtitle2, classes.subtitles)} variant="subtitle2">
+                                        Digital transformation describes an organisation making a fundamental change from its current state
+                                    </Typography>
+                                    <Box className={classes.learnMoreContainer}>
+                                        <Typography className={classes.learnMore} variant="body2" >
+                                            Learn More
                                         </Typography>
-                                        <Typography className={classes.contentDescription} variant="subtitle1" >
-                                            Webify is the all-in-one WordPress theme to build a beautiful online presence for you. Our team discussed every single detail to make sure Webify is the most versatile and unique theme created so far.
-                                        </Typography>
-                                        <Typography className={classes.contentDescription} variant="subtitle1" >
-                                            It’s more then a WordPress theme. It’s like a design tool that let’s you create websites of any niche, easily. Each and every block is created with AB testing and UX research. Take a look at all the pages and elements and see how beautiful your webiste will become. No coding required, ofcourse!
-                                        </Typography>
-                                        <Button className={classes.button} color="primary">
-                                            Take 1-min Tour
-                                        </Button>
                                     </Box>
-                                </Grid>
+                                </Paper>
                             </Grid>
-                        </MyContainer>
-                    </Box>
-                </PaddedBox>
-            </Box>
+
+                            <Grid item xs={12} md={6}>
+                                <Paper variant="outlined" className={cx(classes.paper, classes.featurePaper)}>
+                                    <IconButton
+                                        className={cx(classes.menuButton, classes.featureButton)}
+                                        aria-label="watch icon"
+                                        aria-controls="watch icon"
+                                        aria-haspopup="true"
+                                    >
+                                        <WatchIcon className={cx(classes.icon, classes.featureIcon,)} />
+                                    </IconButton>
+                                    <Typography className={cx(classes.subtitle1, classes.subtitles)} variant="subtitle1" >
+                                        Feature-driven
+                                    </Typography>
+                                    <Typography className={cx(classes.subtitle2, classes.subtitles)} variant="subtitle2" color="textPrimary">
+                                        It’s also a cultural change, a shift in mindset where the whole company supports a new way of thinking.                                    </Typography>
+                                    <Box className={classes.learnMoreContainer}>
+                                        <Typography className={classes.learnMore} variant="body2" color="textPrimary">
+                                            Learn More
+                                        </Typography>
+                                    </Box>
+                                </Paper>
+                            </Grid>
+                            <Grid item xs={12} md={6} className={classes.left}>
+                                <Paper variant="outlined" className={cx(classes.paper, classes.avantPaper)}>
+                                    <IconButton
+                                        className={cx(classes.menuButton, classes.avantButton)}
+                                        aria-label="timer icon"
+                                        aria-controls="timer icon"
+                                        aria-haspopup="true"
+                                    >
+                                        <TimerIcon className={cx(classes.icon, classes.avantIcon)} />
+                                    </IconButton>
+                                    <Typography className={cx(classes.subtitle1, classes.subtitles)} variant="subtitle1" >
+                                        Avant Garde
+                                    </Typography>
+                                    <Typography className={cx(classes.subtitle2, classes.subtitles)} variant="subtitle2" color="textPrimary">
+                                        We can change the way your business thinks and behaves long-term in order to combat the threat of digital disruption.
+                                    </Typography>
+                                    <Box className={classes.learnMoreContainer}>
+                                        <Typography className={classes.learnMore} variant="body2" color="textPrimary">
+                                            Learn More
+                                        </Typography>
+                                    </Box>
+                                </Paper>
+                            </Grid>
+
+                            <Grid item xs={12} md={6}>
+                                <Paper variant="outlined" className={cx(classes.paper, classes.foxPaper, classes.lastPaper)}>
+                                    <IconButton
+                                        className={cx(classes.menuButton, classes.foxButton)}
+                                        aria-label="localpizza icon"
+                                        aria-controls="localpizza icon"
+                                        aria-haspopup="true"
+                                    >
+                                        <LocalPizzaIcon className={cx(classes.icon, classes.foxIcon)} />
+                                    </IconButton>
+                                    <Typography className={cx(classes.subtitle1, classes.subtitles)} variant="subtitle1" >
+                                        Fox in the Box
+                                    </Typography>
+                                    <Typography className={cx(classes.subtitle2, classes.subtitles)} variant="subtitle2" color="textPrimary">
+                                        We will work with you as the business transforms into one that is efficient, customer-centric.                                    </Typography>
+                                    <Box className={classes.learnMoreContainer}>
+                                        <Typography className={classes.learnMore} variant="body2" color="textPrimary">
+                                            Learn More
+                                        </Typography>
+                                    </Box>
+                                </Paper>
+                            </Grid>
+                        </Grid>
+                        <Grid className={classes.contentContainer} item xs={12} lg={6} >
+                            <Box >
+                                <Typography className={classes.contentTitle} variant="h4">
+                                    Build websites with webify.
+                                    <br />
+                                    Any niche. In minutes.
+                                </Typography>
+                                <Typography className={classes.contentDescription} variant="subtitle1" >
+                                    Webify is the all-in-one WordPress theme to build a beautiful online presence for you. Our team discussed every single detail to make sure Webify is the most versatile and unique theme created so far.
+                                </Typography>
+                                <Typography className={classes.contentDescription} variant="subtitle1" >
+                                    It’s more then a WordPress theme. It’s like a design tool that let’s you create websites of any niche, easily. Each and every block is created with AB testing and UX research. Take a look at all the pages and elements and see how beautiful your webiste will become. No coding required, ofcourse!
+                                </Typography>
+                                <Button className={classes.button} color="primary">
+                                    Take 1-min Tour
+                                </Button>
+                            </Box>
+                        </Grid>
+                    </Grid>
+                </MyContainer>
+            </PaddedBox>
             <Divider />
         </Box>
     )

@@ -6,9 +6,9 @@ import Home from './pages/Home/Home'
 function App() {
 
   return (
-    <Box >
+    <Box style={{ overflowX: "hidden" }}>
       <Header />
-      <Home/>
+      <Home />
     </Box>
   );
 }
