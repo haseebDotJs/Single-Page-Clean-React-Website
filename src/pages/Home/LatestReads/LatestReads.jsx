@@ -1,6 +1,5 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { items } from "./Items/Items"
 import {
     Typography,
     Box,
@@ -10,21 +9,16 @@ import {
     Divider
 } from '@material-ui/core';
 import { MyContainer, PaddedBox, TitleSubtitle } from '../../../ContainerAndBox'
-
+import Cards from './Cards/Cards'
 
 
 const useStyles = makeStyles((theme) => ({
-    box: {
-        backgroundImage: "url(https://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/icon-box-bg.png)",
-        backgroundPosition: "center 30px",
-        backgroundRepeat: "no-repeat",
-        [theme.breakpoints.down("md")]: {
-            backgroundPosition: "center center",
-        }
-    },
+
     paper: {
         padding: theme.spacing(5, 4),
         cursor: "default",
+        // position: "relative",
+        // zIndex: 0,
         overflow: "hidden",
         transition: "all 0.3s ease-out",
         "&:hover": {
@@ -62,16 +56,16 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const FunFacts = () => {
+const LatestReads = () => {
     const classes = useStyles()
 
     return (
         <Box>
-            <Box className={classes.box}>
-                <PaddedBox>
-                    <MyContainer >
-                        <TitleSubtitle title="Fun facts from workspace" subtitle="We’re hustlers, we get shit done no matter what" />
-                        <Grid container spacing={3}>
+            <PaddedBox>
+                <MyContainer >
+                    <TitleSubtitle title="Latest reads from blog" subtitle="See what we're up to on a rainy night" />
+                    <Cards/>
+                    {/* <Grid container spacing={3}>
                             {items.map(item => (
                                 <Grid item xs={12} md={3} key={item.title}>
                                     <Paper variant="outlined" className={classes.paper}>
@@ -96,13 +90,12 @@ const FunFacts = () => {
                                     </Paper>
                                 </Grid>
                             ))}
-                        </Grid>
-                    </MyContainer>
-                </PaddedBox>
-            </Box>
+                        </Grid> */}
+                </MyContainer>
+            </PaddedBox>
             <Divider />
         </Box >
     )
 }
 
-export default FunFacts
+export default LatestReads

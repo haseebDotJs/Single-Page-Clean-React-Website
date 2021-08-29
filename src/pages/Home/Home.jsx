@@ -7,6 +7,7 @@ import Reviews from './Reviews/Reviews'
 import SuccessfulBrands from './SuccessfulBrands/SuccessfulBrands'
 import LookLikeAnExpert from './LookLikeAnExpert/LookLikeAnExpert'
 import FunFacts from './FunFacts/FunFacts'
+import LatestReads from './LatestReads/LatestReads'
 const Home = () => {
     return (
         <Box>
@@ -17,6 +18,7 @@ const Home = () => {
             <SuccessfulBrands />
             <LookLikeAnExpert />
             <FunFacts />
+            <LatestReads />
         </Box>
     )
 }
