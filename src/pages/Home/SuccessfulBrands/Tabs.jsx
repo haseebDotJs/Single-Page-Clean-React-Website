@@ -6,11 +6,11 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import Tab1 from './Tab1'
-import Images2 from './Tab2.'
-import Images3 from './Tab3'
-import Images4 from './Tab4'
-import Images5 from './Tab5'
-import cx from "classnames"
+import Tab2 from './Tab2.'
+import Tab3 from './Tab3'
+import Tab4 from './Tab4'
+import Tab5 from './Tab5'
+import girlPic from '../../../images/girl.jpg'
 import AppBar from '@material-ui/core/AppBar'
 import FlipMove from 'react-flip-move';
 
@@ -57,41 +57,53 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         alignItems: 'center',
     },
-    row: {
-        display: "flex",
-        flexWrap: "wrap",
-        padding: "0",
-        margin: "auto",
-        width: "100%"
-    },
-    /* Create four equal columns that sits next to each other */
-    column: {
-        marginRight: theme.spacing(2),
-        marginLeft: theme.spacing(2),
-        flex: "31%",
-        maxWidth: "100%",
-        [theme.breakpoints.down("sm")]: {
-            flex: "100%",
-            maxWidth: "100%",
-            marginRight: 'auto',
-            marginLeft: 'auto'
+    firstColumn: {
+        marginRight: theme.spacing(4),
+        [theme.breakpoints.down("md")]: {
+            marginRight: theme.spacing(0),
+            marginBottom: theme.spacing(4)
         }
     },
-    firstColumn: {
-        marginLeft: 0,
-    },
     lastColumn: {
-        marginRight: 0
+        marginLeft: theme.spacing(4),
+        [theme.breakpoints.down("md")]: {
+            marginLeft: theme.spacing(0),
+            marginTop: theme.spacing(4)
+        }
     },
-    img: {
-        marginTop: theme.spacing(4),
-        verticalAlign: "middle",
-        width: "100%",
-        maxWidth: "400px",
-        display: 'block',
-        marginLeft: "auto",
-        marginRight: "auto"
+    mb: {
+        marginBottom: theme.spacing(4)
     },
+    bg: {
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        width: "100%"
+    },
+    chair: {
+        height: 220,
+        backgroundImage: `url(https://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/willian-justen-de-vasconcellos-550613-unsplash-1-1.jpg)`,
+    },
+    leaf: {
+        height: 320,
+        backgroundImage: "url(https://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/wbfvgbpdxfa.jpg)"
+    },
+    cycle: {
+        height: 320,
+        backgroundImage: "url(https://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/g83y6do219w.jpg)"
+    },
+    watch: {
+        height: 220,
+        backgroundImage: "url(https://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/p3fh6ya5evi.jpg)"
+    },
+    tile: {
+        height: 220,
+        backgroundImage: "url(https://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/w6onivdcfn0.jpg)"
+    },
+    girl: {
+        height: 320,
+        backgroundImage: `url(${girlPic})`
+    }
 }));
 
 export default function FullWidthTabs() {
@@ -99,7 +111,7 @@ export default function FullWidthTabs() {
     const theme = useTheme();
     const [value, setValue] = React.useState(0);
 
-    const handleChange = (event, newValue) => {
+    const handleChange = (e, newValue) => {
         setValue(newValue);
     };
 
@@ -114,8 +126,8 @@ export default function FullWidthTabs() {
                 TabIndicatorProps={{ style: { background: '#fff' } }}
                 value={value}
                 onChange={handleChange}
-                variant='scrollable'
-                style={{marginBottom: 1}}
+                variant="scrollable"
+                style={{ marginBottom: '1rem' }}
             >
                 <Tab label="All" {...a11yProps(0)} disableRipple={true} />
                 <Tab label="Branding" {...a11yProps(1)} disableRipple={true} />
@@ -127,22 +139,22 @@ export default function FullWidthTabs() {
                 axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                 index={value}
                 onChangeIndex={handleChangeIndex}
-                style={{cursor: "e-resize"}}
+                style={{ cursor: "e-resize",width: "100%" }}
             >
-                <TabPanel value={value} index={0} dir={theme.direction} style={{ overflowY: 'hidden' }}>
-                    <Tab1 styling={{ row: classes.row, column: classes.column, firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, img: classes.img }} />
+                <TabPanel value={value} index={0} dir={theme.direction} >
+                    <Tab1 styling={{ firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, mb: classes.mb, bg: classes.bg, chair: classes.chair, leaf: classes.leaf, cycle: classes.cycle, watch: classes.watch, tile: classes.tile, girl: classes.girl }} />
                 </TabPanel>
                 <TabPanel value={value} index={1} dir={theme.direction}>
-                    <Images2 styling={{ row: classes.row, column: classes.column, firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, img: classes.img }} />
+                    <Tab2 styling={{ firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, mb: classes.mb, bg: classes.bg, chair: classes.chair, leaf: classes.leaf, cycle: classes.cycle, watch: classes.watch, tile: classes.tile, girl: classes.girl }} />
                 </TabPanel>
                 <TabPanel value={value} index={2} dir={theme.direction}>
-                    <Images3 styling={{ row: classes.row, column: classes.column, firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, img: classes.img }} />
+                    <Tab3 styling={{ firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, mb: classes.mb, bg: classes.bg, chair: classes.chair, leaf: classes.leaf, cycle: classes.cycle, watch: classes.watch, tile: classes.tile, girl: classes.girl }} />
                 </TabPanel>
                 <TabPanel value={value} index={3} dir={theme.direction}>
-                    <Images4 styling={{ row: classes.row, column: classes.column, firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, img: classes.img }} />
+                    <Tab4 styling={{ firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, mb: classes.mb, bg: classes.bg, chair: classes.chair, leaf: classes.leaf, cycle: classes.cycle, watch: classes.watch, tile: classes.tile, girl: classes.girl }} />
                 </TabPanel>
                 <TabPanel value={value} index={4} dir={theme.direction}>
-                    <Images5 styling={{ row: classes.row, column: classes.column, firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, img: classes.img }} />
+                    <Tab5 styling={{ firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, mb: classes.mb, bg: classes.bg, chair: classes.chair, leaf: classes.leaf, cycle: classes.cycle, watch: classes.watch, tile: classes.tile, girl: classes.girl }} />
                 </TabPanel>
             </SwipeableViews>
         </Box>
