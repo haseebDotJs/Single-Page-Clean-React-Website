@@ -29,10 +29,10 @@ const PaddedBox = ({ children }) => {
 const TitleSubtitle = ({ title, subtitle }) => {
     return (
         <Box mb={5}>
-            <Typography style={{ fontWeight: 550 }} variant="h4" align="center" gutterBottom>
+            <Typography style={{ fontWeight: 550,fontSize: "2.325rem" }} variant="h4" align="center" gutterBottom>
                 {title}
             </Typography>
-            <Typography variant="body1" color="textSecondary" align="center">
+            <Typography style={{fontSize: "1.125rem"}}variant="body1" color="textSecondary" align="center">
                 {subtitle}
             </Typography>
         </Box>

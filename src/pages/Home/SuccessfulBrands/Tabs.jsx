@@ -59,14 +59,14 @@ const useStyles = makeStyles((theme) => ({
     },
     firstColumn: {
         marginRight: theme.spacing(4),
-        [theme.breakpoints.down("md")]: {
+        [theme.breakpoints.down("sm")]: {
             marginRight: theme.spacing(0),
             marginBottom: theme.spacing(4)
         }
     },
     lastColumn: {
         marginLeft: theme.spacing(4),
-        [theme.breakpoints.down("md")]: {
+        [theme.breakpoints.down("sm")]: {
             marginLeft: theme.spacing(0),
             marginTop: theme.spacing(4)
         }

@@ -17,10 +17,10 @@ const useStyles = makeStyles((theme) => ({
     },
     media: {
         height: 240,
-        transition: "all .2s ease-in-out", /* Animation */
+        transition: "all .3s ease-in-out", /* Animation */
         backgroundSize: "100%",
         "&:hover": {
-            backgroundSize: "105%"
+            backgroundSize: "110%",
         }
     },
     title: {

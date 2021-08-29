@@ -8,6 +8,7 @@ import SuccessfulBrands from './SuccessfulBrands/SuccessfulBrands'
 import LookLikeAnExpert from './LookLikeAnExpert/LookLikeAnExpert'
 import FunFacts from './FunFacts/FunFacts'
 import LatestReads from './LatestReads/LatestReads'
+import GetUpdates from './GetUpdates/GetUpdates'
 const Home = () => {
     return (
         <Box>
@@ -19,6 +20,7 @@ const Home = () => {
             <LookLikeAnExpert />
             <FunFacts />
             <LatestReads />
+            <GetUpdates />
         </Box>
     )
 }
