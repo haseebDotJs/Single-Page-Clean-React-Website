@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
         color: "rgb(154,162,218)",
         fontWeight: theme.typography.fontWeightBold,
         marginBottom: 1,
-        fontSize: '.85rem'
+        fontSize: '14px'
     },
     subtitle: {
         fontWeight: 550,
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
         lineHeight: 1.5
     },
     endTitle: {
-        fontSize: '.85rem',
+        fontSize: '14px',
         fontWeight: theme.typography.fontWeightLight,
         color: "gray"
     }

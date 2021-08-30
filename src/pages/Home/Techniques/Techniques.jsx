@@ -73,10 +73,11 @@ const useStyles = makeStyles((theme) => ({
 
     },
     subtitle1: {
-        fontWeight: 550,
+        fontWeight: theme.typography.fontWeightBold,
+        fontSize: '16px',
     },
     subtitle2: {
-        fontSize: '.8rem',
+        fontSize: '13px',
         marginBottom: theme.spacing(2),
         color: "gray",
 
@@ -203,10 +204,10 @@ const Techniques = () => {
                                     >
                                         <WeekendIcon className={cx(classes.icon, classes.creativeIcon)} />
                                     </IconButton>
-                                    <Typography className={cx(classes.subtitle1, classes.subtitles)} variant="subtitle1" >
+                                    <Typography className={cx(classes.subtitle1, classes.subtitles)} variant="body1" >
                                         Super Creative
                                     </Typography>
-                                    <Typography className={cx(classes.subtitle2, classes.subtitles)} variant="subtitle2">
+                                    <Typography className={cx(classes.subtitle2, classes.subtitles)} variant="body1">
                                         Digital transformation describes an organisation making a fundamental change from its current state
                                     </Typography>
                                     <Box className={classes.learnMoreContainer}>

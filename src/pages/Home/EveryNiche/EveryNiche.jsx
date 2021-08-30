@@ -22,10 +22,12 @@ const useStyles = makeStyles((theme) => ({
     },
     descriptionHead: {
         fontWeight: 550,
+        fontSize: "16px"
     },
     descriptionBody: {
         fontWeight: theme.typography.fontWeightRegular,
         marginBottom: theme.spacing(2),
+        fontSize: "14px",
         color: "gray",
     },
     button1: {
@@ -86,10 +88,10 @@ const EveryNiche = () => {
                                     >
                                         <LocalMallIcon className={classes.icon1} />
                                     </IconButton>
-                                    <Typography className={classes.descriptionHead} variant="subtitle1" >
+                                    <Typography className={classes.descriptionHead} variant="body1" >
                                         Super Creative
                                     </Typography>
-                                    <Typography className={classes.descriptionBody} variant="subtitle2">
+                                    <Typography className={classes.descriptionBody} variant="body1">
                                         Our award-winning templates are the most beautiful way to present your ideas online. Stand out with a professional website, portfolio, or online store.
                                     </Typography>
                                 </Box>
