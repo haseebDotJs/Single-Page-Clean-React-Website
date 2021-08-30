@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
     carouselContainer: {
         border: "1px solid rgb(234,234,234)",
-
+        borderRadius: '5px'
     },
     carousel: {
         width: "100%"
@@ -33,16 +33,11 @@ const useStyles = makeStyles((theme) => ({
     customerImageContainer: {
         height: 350,
         backgroundRepeat: 'no-repeat',
-        borderRadius: '10px',
         backgroundSize: "cover",
         backgroundPosition: "center",
+        borderRadius: '5px',
         [theme.breakpoints.down("md")]: {
             height: 300
-        }
-    },
-    grid1: {
-        [theme.breakpoints.down("sm")]: {
-            order: 1
         }
     }
 })
@@ -68,10 +63,10 @@ const items = [
 
 function Project({ item: { id, image } }) {
     const classes = useStyles();
- 
+
     return (
         <Box className={classes.carouselContainer} id={id}>
-                <Box className={classes.customerImageContainer} style={{ backgroundImage: `url(${image})` }} />
+            <Box className={classes.customerImageContainer} style={{ backgroundImage: `url(${image})` }} />
         </Box>
     )
 }

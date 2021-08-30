@@ -171,6 +171,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "whitesmoke",
         color: "slateblue",
         fontWeight: theme.typography.fontWeightBold,
+        transition: "all .5s ease",
         "&:hover": {
             backgroundColor: "slateblue",
             color: "white"
