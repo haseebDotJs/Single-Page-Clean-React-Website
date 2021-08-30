@@ -8,7 +8,7 @@ import Tabs from './Tabs'
 
 const SuccessfulBrands = () => {
 
-
+ 
     return (
         <Box >
             <PaddedBox>
