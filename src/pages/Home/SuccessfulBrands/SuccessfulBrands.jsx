@@ -21,7 +21,7 @@ const SuccessfulBrands = () => {
             </PaddedBox>
             <Divider />
         </Box>
-    )
+    ) 
 }
 
 export default SuccessfulBrands
