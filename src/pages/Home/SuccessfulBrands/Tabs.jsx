@@ -122,7 +122,7 @@ export default function FullWidthTabs() {
                 TabIndicatorProps={{ style: { background: '#fff' } }}
                 value={value}
                 onChange={handleChange}
-                variant="scrollable"
+                variant="scrollable" 
                 style={{ marginBottom: '1rem' }}
             >
                 <Tab label="All" {...a11yProps(0)} disableRipple={true} />
