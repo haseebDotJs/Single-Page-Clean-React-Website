@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import SwipeableViews from 'react-swipeable-views';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -110,8 +111,11 @@ export default function FullWidthTabs() {
         setValue(newValue);
     };
 
+    const handleChangeIndex = (index) => {
+        setValue(index);
+    };
 
-    // this swipeable views is creating warning in log
+
     return (
         <Box className={classes.container}>
             <Tabs
@@ -127,22 +131,28 @@ export default function FullWidthTabs() {
                 <Tab label="Photography" {...a11yProps(3)} disableRipple={true} />
                 <Tab label="UI/UX" {...a11yProps(4)} disableRipple={true} />
             </Tabs>
-
-            <TabPanel value={value} index={0}  >
-                <Tab1 styling={{ firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, mb: classes.mb, bg: classes.bg, chair: classes.chair, leaf: classes.leaf, cycle: classes.cycle, watch: classes.watch, tile: classes.tile, girl: classes.girl }} />
-            </TabPanel>
-            <TabPanel value={value} index={1} >
-                <Tab2 styling={{ firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, mb: classes.mb, bg: classes.bg, chair: classes.chair, leaf: classes.leaf, cycle: classes.cycle, watch: classes.watch, tile: classes.tile, girl: classes.girl }} />
-            </TabPanel>
-            <TabPanel value={value} index={2} >
-                <Tab3 styling={{ firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, mb: classes.mb, bg: classes.bg, chair: classes.chair, leaf: classes.leaf, cycle: classes.cycle, watch: classes.watch, tile: classes.tile, girl: classes.girl }} />
-            </TabPanel>
-            <TabPanel value={value} index={3} >
-                <Tab4 styling={{ firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, mb: classes.mb, bg: classes.bg, chair: classes.chair, leaf: classes.leaf, cycle: classes.cycle, watch: classes.watch, tile: classes.tile, girl: classes.girl }} />
-            </TabPanel>
-            <TabPanel value={value} index={4} >
-                <Tab5 styling={{ firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, mb: classes.mb, bg: classes.bg, chair: classes.chair, leaf: classes.leaf, cycle: classes.cycle, watch: classes.watch, tile: classes.tile, girl: classes.girl }} />
-            </TabPanel>
+            <SwipeableViews
+                axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+                index={value}
+                onChangeIndex={handleChangeIndex}
+                style={{ cursor: "e-resize",width: "100%" }}
+            >
+                <TabPanel value={value} index={0} dir={theme.direction} >
+                    <Tab1 styling={{ firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, mb: classes.mb, bg: classes.bg, chair: classes.chair, leaf: classes.leaf, cycle: classes.cycle, watch: classes.watch, tile: classes.tile, girl: classes.girl }} />
+                </TabPanel>
+                <TabPanel value={value} index={1} dir={theme.direction}>
+                    <Tab2 styling={{ firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, mb: classes.mb, bg: classes.bg, chair: classes.chair, leaf: classes.leaf, cycle: classes.cycle, watch: classes.watch, tile: classes.tile, girl: classes.girl }} />
+                </TabPanel>
+                <TabPanel value={value} index={2} dir={theme.direction}>
+                    <Tab3 styling={{ firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, mb: classes.mb, bg: classes.bg, chair: classes.chair, leaf: classes.leaf, cycle: classes.cycle, watch: classes.watch, tile: classes.tile, girl: classes.girl }} />
+                </TabPanel>
+                <TabPanel value={value} index={3} dir={theme.direction}>
+                    <Tab4 styling={{ firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, mb: classes.mb, bg: classes.bg, chair: classes.chair, leaf: classes.leaf, cycle: classes.cycle, watch: classes.watch, tile: classes.tile, girl: classes.girl }} />
+                </TabPanel>
+                <TabPanel value={value} index={4} dir={theme.direction}>
+                    <Tab5 styling={{ firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, mb: classes.mb, bg: classes.bg, chair: classes.chair, leaf: classes.leaf, cycle: classes.cycle, watch: classes.watch, tile: classes.tile, girl: classes.girl }} />
+                </TabPanel>
+            </SwipeableViews>
         </Box>
     );
 }
