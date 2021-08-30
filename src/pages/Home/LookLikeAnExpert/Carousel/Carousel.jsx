@@ -2,8 +2,6 @@
 import Carousel from 'react-material-ui-carousel';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import {
-    Typography,
-    Grid,
     Box,
     useMediaQuery
 } from '@material-ui/core'

@@ -7,7 +7,6 @@ import cx from "classnames"
 
 const Tab1 = ({ styling }) => {
     const { firstColumn, lastColumn, mb, bg, chair, leaf, cycle, watch, tile, girl } = styling
-    console.log("styling", styling);
     return (
         <Box >
             <Grid container >

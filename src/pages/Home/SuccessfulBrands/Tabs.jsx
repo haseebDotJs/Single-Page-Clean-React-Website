@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -11,10 +11,6 @@ import Tab3 from './Tab3'
 import Tab4 from './Tab4'
 import Tab5 from './Tab5'
 import girlPic from '../../../images/girl.jpg'
-import AppBar from '@material-ui/core/AppBar'
-import FlipMove from 'react-flip-move';
-
-
 
 const TabPanel = (props) => {
     const { children, value, index, ...other } = props;
@@ -119,7 +115,7 @@ export default function FullWidthTabs() {
         setValue(index);
     };
 
-
+    // this swipeable views is creating warning in log
     return (
         <Box className={classes.container}>
             <Tabs
@@ -139,7 +135,7 @@ export default function FullWidthTabs() {
                 axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                 index={value}
                 onChangeIndex={handleChangeIndex}
-                style={{ cursor: "e-resize",width: "100%" }}
+                style={{ cursor: "e-resize", width: "100%" }}
             >
                 <TabPanel value={value} index={0} dir={theme.direction} >
                     <Tab1 styling={{ firstColumn: classes.firstColumn, lastColumn: classes.lastColumn, mb: classes.mb, bg: classes.bg, chair: classes.chair, leaf: classes.leaf, cycle: classes.cycle, watch: classes.watch, tile: classes.tile, girl: classes.girl }} />

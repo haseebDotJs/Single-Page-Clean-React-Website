@@ -1,6 +1,4 @@
-// import React, { useState } from 'react'
 import {
-    Typography,
     Box,
     Divider
 } from '@material-ui/core';

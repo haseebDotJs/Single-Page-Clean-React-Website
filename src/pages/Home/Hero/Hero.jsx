@@ -1,11 +1,10 @@
 import React from 'react'
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import {
     Typography,
     Box,
     Grid,
     Button,
-    useMediaQuery,
     Divider
 } from '@material-ui/core';
 import { MyContainer, PaddedBox } from '../../../ContainerAndBox'
@@ -68,9 +67,6 @@ const sponsorImages = [
 ]
 const Hero = () => {
     const classes = useStyles()
-    const theme = useTheme()
-    const isMedium = useMediaQuery(theme.breakpoints.down("sm"));
-    console.log('isMedium', isMedium);
 
     return (
         <Box>

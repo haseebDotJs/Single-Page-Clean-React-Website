@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Grid, Typography, Card, CardMedia, CardContent, CardActions, CardActionArea } from '@material-ui/core'
+import { Grid, Typography, Card, CardMedia, CardContent, CardActions, CardActionArea } from '@material-ui/core'
 import CardImage1 from '../../../../images/CardImage1.jpg'
 import CardImage2 from '../../../../images/CardImage2.jpg'
 import CardImage3 from '../../../../images/CardImage3.jpg'

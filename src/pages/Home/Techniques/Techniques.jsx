@@ -185,9 +185,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Techniques = () => {
     const classes = useStyles()
-
     const isMedium = useMediaQuery('(max-width:768px)')
-    console.log("isMedium", isMedium);
+    
     return (
         <Box>
             <PaddedBox>
